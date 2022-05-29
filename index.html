@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0dd9f799a9.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="max-width">
-            <ul class="menu">
-                <li><a href="#home" class="menu-btn">Home</a></li>
-                <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="#skills" class="menu-btn">Skills</a></li>
-                <li><a href="#teams" class="menu-btn">Teams</a></li>
-                <li><a href="#contact" class="menu-btn">Contact</a></li>
-            </ul>
+  <nav class="navbar">
 
-        </div>
-    </nav>
+    <!-- LOGO -->
+    <div class="logo"><img src="logo.png" alt="logo"> </div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <!-- USING CHECKBOX HACK -->
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+          <!-- DROPDOWN MENU -->
+      </div>
+    </ul>
+  </nav>
 
     <!-- home section start -->
     <section class="home" id="home">
@@ -28,7 +37,7 @@
             <div class="home-content">
                 <div class="text-1">Hello, my name is</div>
                 <div class="text-2">Aakash Singh</div>
-                <div class="text-3">And I'm a <span>CSE student</span></div>
+                <div class="text-3">And I'm a <span class="typing"></span></div>
             </div>
         </div>
     </section>
@@ -42,11 +51,35 @@
                     <img src="images/profile-1.jpg" alt="">
                 </div>
                 <div class="column right">
-                    <div class="text">I'm Aakash Singh and I'm a <span>Computer science student</span></div>
+                    <div class="text">I'm Aakash Singh and I'm a <span class="typing-2"></span></div>
                     <p class="skill">I am a <span>Cyber Security</span> enthusiast, freelancer and a content writter, I have been writing content since two years and now i have also started to expand my skills. I am an <span>ETHICAL HACKER</span> and a front end <span>Web Developer</span> and also have enough knowledge of <span>PYTHON</span> programming language. </p>
-
+                     <a href="cv.pdf">Download CV</a>
                 </div>
-            </div>
+
+                <div class="scard">
+
+                    <div class="sicon">
+                    <i class="fas fa-user-alt"></i>
+                    </div>
+                    <h4><a  class="sscard" href="projects.html">Projects</a></h4>
+                  <p>Click to see my minor and major projects.</p>
+                </div>
+                <div class="scard">
+                    <div class="sicon">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <h4><a href="https://wa.me/+918586919222" class="sscard">CONTACTS</a></h4>
+                  <p>Fell free to contact me any time...</p>
+                </div>
+                <div class="scard">
+                    <div class="sicon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4><a href="https://www.linkedin.com/in/aakash-singh-rajput-7548a31a7/" class="sscard">Connect</a></h4>
+                  <p>Connect me over LinkedIn..</p>
+                </div>
+
+
         </div>
     </section>
 
@@ -220,6 +253,22 @@
     <!-- footer section start -->
     <footer >
       Created By <span>Aakash Singh</span> | 2020 All rights reserved.
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+    var typed = new Typed(".typing",{
+            strings: ["CSE student", "Developer", "Blogger", "Athlete", "Freelancer"],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+        var typed = new Typed(".typing-2", {
+            strings: ["CSE student", "Developer", "Blogger", "Athlete", "Freelancer"],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+
+    </script>
 
 </body>
 </html>

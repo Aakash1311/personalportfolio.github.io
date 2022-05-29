@@ -78,42 +78,87 @@ section .title::after{
 }
 
 /* navbar styling */
-.navbar{
-  background-color: green;
-    position: static;
-    width: 100%;
-    z-index: 999;
-    padding: 30px 0;
-    font-family: 'Ubuntu', sans-serif;
-    transition: all 0.3s ease;
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color: teal;
+ color: #fff;
+ font-family: sans-serif;
 }
-.navbar.static{
-    padding: 15px 0;
-    background: crimson;
+.nav-links a {
+ color: #fff;
+ text-decoration: none;
 }
-.navbar .max-width{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* LOGO */
+.logo img{
+  max-height:40px;
+
 }
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
+/* NAVBAR MENU */
+.menu {
+ display: flex;
+ gap: 1em;
+ font-size: 18px;
+
 }
-.navbar .menu li a{
-    display: block;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    margin-left: 25px;
-    transition: color 0.3s ease;
+.menu li:hover {
+ background-color: #4c9e9e;
+ border-radius: 5px;
+ transition: 0.3s ease;
 }
-.navbar .menu li a:hover{
-    color: crimson;
+.menu li {
+ padding: 5px 14px;
+ list-style: none;
+
 }
-.navbar.static .menu li a:hover{
-    color: #fff;
+input[type=checkbox]{
+ display: none;
 }
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+ .menu {
+ display:none;
+ position: absolute;
+ background-color:teal;
+ right: 0;
+ left: 0;
+ text-align: center;
+ padding: 16px 0;
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked~  .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+
+
+}
+
 
 /* home section styling */
 .home{
@@ -174,6 +219,23 @@ section .title::after{
 }
 .about .about-content .right .text span{
     color: crimson;
+}
+
+.about .about-content .right a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: crimson;
+    background: none;
 }
 .skill span{
   color:green
@@ -386,6 +448,76 @@ footer{
 
 
 
+/*card css*/
+.scard{
+    width: 250px;
+    height: 200px;
+    color: white;
+    margin: 1em;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1.5em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.scard::before, .scard::after{
+    content: '';
+    position: absolute;
+    background: #171717;
+    width: 100%;
+    height: 40%;
+    z-index: -10;
+    border-radius: 15px 15px 0 0;
+    transition: all .4s;
+}
+.scard::before{
+    top: 0;
+}
+.scard:hover::before{
+    transform: translateY(-20px);
+}
+.scard::after{
+    bottom: 10px;
+    height: 60%;
+    border-radius: 0 0 15px 15px;
+}
+.sicon{
+    width: 60px;
+    height: 60px;
+    background: #DA0037;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.scard:hover .sicon{
+    box-shadow: 0 0 10px red;
+}
+.sicon i{
+    font-size: 1.5em;
+}
+.scard p{
+    margin: 0.5em 0;
+    font-size: 0.8em;
+    display: none;
+    opacity: 0;
+    transition: all .4s;
+}
+.scard:hover p{
+    display: block;
+    opacity: 1;
+}
+.scard h4{
+    margin-top: 0.5em;
+}
+
+a.sscard{
+  color: white;
+}
 /* responsive media query start */
 @media (max-width: 1104px) {
     .about .about-content .left img{
@@ -400,7 +532,7 @@ footer{
     }
 }
 @media (max-width: 947px){
-    .menu-btn{
+  /*  .menu-btn{
         display: block;
         z-index: 999;
     }
@@ -428,7 +560,7 @@ footer{
         display: inline-block;
         margin: 20px 0;
         font-size: 25px;
-    }
+    } */
     .home .home-content .text-2{
         font-size: 70px;
     }
